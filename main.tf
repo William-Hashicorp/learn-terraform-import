@@ -8,9 +8,15 @@ terraform {
       version = "~> 2.16"
     }
   }
-  required_version = ">= 0.14"
+# required_version = ">= 0.14"
 }
 
+/* provider "docker" {
+  version = "~> 2.7"
+  host="npipe:////.//pipe//docker_engine"
+  
+  } */
 provider "docker" {
-  host    = "npipe:////.//pipe//docker_engine"
+
+  host = "unix:///var/run/docker.sock"
 }
